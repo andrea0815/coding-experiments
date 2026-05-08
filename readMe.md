@@ -11,6 +11,11 @@
 
 => pnpm --filter app-name dev
 
+if its inside a subfolder, the name changes from 
+"folder/app-name" to "folder-app-name"
+
+=> pnpm --filter folder-app-name dev
+
 # Install dependency for one app:
 
 => pnpm --filter app-name add package
@@ -31,3 +36,7 @@ collect-builds.js collects all build apps into one dist
 # Preview the build versions:
 
 => pnpm preview
+
+# List all sub-pages
+
+=> pnpm list -r --depth -1

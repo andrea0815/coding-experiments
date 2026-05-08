@@ -28,3 +28,7 @@ copy(path.join(root, "apps/project-name/dist"), path.join(dist, "project-name"))
 copy(path.join(root, "apps/my-test/dist"), path.join(dist, "my-test"));
 
 copy(path.join(root, "apps/shader/sinus-circle/dist"), path.join(dist, "shader/sinus-circle"));
+
+copy(path.join(root, "apps/shader/particles-cursor-animation/dist"), path.join(dist, "shader/particles-cursor-animation"));
+
+copy(path.join(root, "apps/shader/playground/dist"), path.join(dist, "shader/playground"));
