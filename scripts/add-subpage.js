@@ -18,17 +18,69 @@ if (!fs.existsSync(appDir)) {
   process.exit(1);
 }
 
-// 1. Create vite.config.js if missing
-if (!fs.existsSync(viteConfig)) {
-  fs.writeFileSync(
-    viteConfig,
-    `import { defineConfig } from "vite";
+// 0. Update package.json name
+const packageJsonPath = path.join(appDir, "package.json");
+
+if (!fs.existsSync(packageJsonPath)) {
+  console.error(`package.json does not exist: apps/${name}/package.json`);
+  process.exit(1);
+}
+
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+
+// pnpm package names should not contain slashes unless scoped,
+// so "shader/sinus-circle" becomes "shader-sinus-circle"
+packageJson.name = name.replaceAll("/", "-");
+
+fs.writeFileSync(
+  packageJsonPath,
+  JSON.stringify(packageJson, null, 2) + "\n"
+);
+
+// 0.1 Remove local lockfiles from copied app
+const lockFiles = [
+  "package-lock.json",
+  "yarn.lock",
+  "pnpm-lock.yaml",
+  "bun.lockb",
+  "bun.lock"
+];
+
+for (const lockFile of lockFiles) {
+  const lockFilePath = path.join(appDir, lockFile);
+
+  if (fs.existsSync(lockFilePath)) {
+    fs.rmSync(lockFilePath);
+    console.log(`Deleted local lockfile: apps/${name}/${lockFile}`);
+  }
+}
+
+// 1. Create or update vite.config.js
+const viteConfigContent = `import { defineConfig } from "vite";
 
 export default defineConfig({
   base: "/${name}/"
 });
-`
-  );
+`;
+
+if (!fs.existsSync(viteConfig)) {
+  fs.writeFileSync(viteConfig, viteConfigContent);
+} else {
+  let configContent = fs.readFileSync(viteConfig, "utf8");
+
+  if (configContent.includes("base:")) {
+    configContent = configContent.replace(
+      /base:\s*["'`][^"'`]*["'`]/,
+      `base: "/${name}/"`
+    );
+  } else {
+    configContent = configContent.replace(
+      /defineConfig\(\s*\{/,
+      `defineConfig({\n  base: "/${name}/",`
+    );
+  }
+
+  fs.writeFileSync(viteConfig, configContent);
 }
 
 // 2. Add collector line if missing
