@@ -22,13 +22,15 @@ function copy(from, to) {
     fs.cpSync(from, to, { recursive: true });
 }
 
-copy(path.join(root, "apps/hub/dist"), path.join(dist, "hub"));
-copy(path.join(root, "apps/react-test/dist"), path.join(dist, "react-test"));
-copy(path.join(root, "apps/project-name/dist"), path.join(dist, "project-name"));
-copy(path.join(root, "apps/my-test/dist"), path.join(dist, "my-test"));
-
 copy(path.join(root, "apps/shader/sinus-circle/dist"), path.join(dist, "shader/sinus-circle"));
 
 copy(path.join(root, "apps/shader/particles-cursor-animation/dist"), path.join(dist, "shader/particles-cursor-animation"));
 
 copy(path.join(root, "apps/shader/playground/dist"), path.join(dist, "shader/playground"));
+
+copy(path.join(root, "apps/01-sinus-circle/dist"), path.join(dist, "01-sinus-circle"));
+copy(path.join(root, "apps/02-particle-cursor-animation/dist"), path.join(dist, "02-particle-cursor-animation"));
+copy(path.join(root, "apps/03-raging-sea/dist"), path.join(dist, "03-raging-sea"));
+
+
+copy(path.join(root, "apps/04-book-of-shaders/dist"), path.join(dist, "04-book-of-shaders"));

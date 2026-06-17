@@ -39,4 +39,4 @@ collect-builds.js collects all build apps into one dist
 
 # List all sub-pages
 
-=> pnpm list -r --depth -1
+=> pnpm list -r --depth -2
