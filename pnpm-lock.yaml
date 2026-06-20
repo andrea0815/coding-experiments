@@ -85,6 +85,10 @@ importers:
         version: 0.4.2(vite@6.4.2(lightningcss@1.32.0))
 
   apps/04-book-of-shaders:
+    dependencies:
+      three:
+        specifier: ^0.174.0
+        version: 0.174.0
     devDependencies:
       vite:
         specifier: ^8.0.12
@@ -110,6 +114,10 @@ importers:
         version: 0.4.2(vite@6.4.2(lightningcss@1.32.0))
 
   apps/shader/playground:
+    dependencies:
+      three:
+        specifier: ^0.174.0
+        version: 0.174.0
     devDependencies:
       vite:
         specifier: ^8.0.10
