@@ -16,6 +16,10 @@ if its inside a subfolder, the name changes from
 
 => pnpm --filter folder-app-name dev
 
+when trying to run a project within "playground", dont forget that the url is:
+
+=> http://localhost:5173/playground/page-name/index.html
+
 # Install dependency for one app:
 
 => pnpm --filter app-name add package

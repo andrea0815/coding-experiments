@@ -94,24 +94,15 @@ importers:
         specifier: ^8.0.12
         version: 8.0.16
 
-  apps/shader/particles-cursor-animation:
+  apps/playground:
     dependencies:
-      lil-gui:
-        specifier: ^0.20.0
-        version: 0.20.0
       three:
         specifier: ^0.174.0
         version: 0.174.0
     devDependencies:
       vite:
-        specifier: ^6.2.2
-        version: 6.4.2(lightningcss@1.32.0)
-      vite-plugin-glsl:
-        specifier: 1.3.3
-        version: 1.3.3(rollup@4.60.3)(vite@6.4.2(lightningcss@1.32.0))
-      vite-plugin-restart:
-        specifier: ^0.4.2
-        version: 0.4.2(vite@6.4.2(lightningcss@1.32.0))
+        specifier: ^8.0.10
+        version: 8.0.16
 
   apps/shader/playground:
     dependencies:
@@ -122,25 +113,6 @@ importers:
       vite:
         specifier: ^8.0.10
         version: 8.0.10
-
-  apps/shader/sinus-circle:
-    dependencies:
-      lil-gui:
-        specifier: ^0.20.0
-        version: 0.20.0
-      three:
-        specifier: ^0.174.0
-        version: 0.174.0
-    devDependencies:
-      vite:
-        specifier: ^6.2.2
-        version: 6.4.2(lightningcss@1.32.0)
-      vite-plugin-glsl:
-        specifier: 1.3.3
-        version: 1.3.3(rollup@4.60.3)(vite@6.4.2(lightningcss@1.32.0))
-      vite-plugin-restart:
-        specifier: ^0.4.2
-        version: 0.4.2(vite@6.4.2(lightningcss@1.32.0))
 
 packages:
 

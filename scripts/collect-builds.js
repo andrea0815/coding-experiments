@@ -34,3 +34,5 @@ copy(path.join(root, "apps/03-raging-sea/dist"), path.join(dist, "03-raging-sea"
 
 
 copy(path.join(root, "apps/04-book-of-shaders/dist"), path.join(dist, "04-book-of-shaders"));
+
+copy(path.join(root, "apps/playground/dist"), path.join(dist, "playground"));
