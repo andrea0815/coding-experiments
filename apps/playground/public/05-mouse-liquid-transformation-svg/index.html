@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Mouse Flowmap Deformation</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body>canvas {
+            position: fixed;
+            inset: 0;
+            width: 50%;
+            height: 50%;
+            display: block;
+            z-index: -1;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .svg-container {
+            position: relative;
+            width: 50vw;
+            height: 50vh;
+            overflow: hidden;
+        }
+
+        .svg-container canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="svg-container"></div>
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
